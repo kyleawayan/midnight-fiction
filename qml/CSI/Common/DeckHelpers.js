@@ -1,3 +1,25 @@
+/**
+ * Possible colors:
+ * Color.DarkOrange
+ * Color.Mint
+ * Color.Yellow
+ * Color.Lime
+ * Color.Green
+ * Color.Mint
+ * Color.Cyan
+ * Color.Turquoise
+ * Color.Plum
+ * Color.Violet
+ * Color.Purple
+ * Color.Magenta
+ * Color.Fuchsia
+ * Color.WarmYellow
+ * Color.Black
+ * Color.White
+ * Color.Red
+ * 
+ * Source: https://www.youtube.com/watch?v=_sti1yfWAqE
+ */
 
 // Returns a color for the specified Deck index
 function colorForDeck(deckIdx)
@@ -6,13 +28,11 @@ function colorForDeck(deckIdx)
     {
       case 1:
       case 2:
-        // Deck A and B are color-coded in Blue
-        return Color.Blue;
-
+        return Color.White;
       case 3:
+        return Color.Fuchsia;
       case 4:
-        // Deck C and D are color-coded in Orange
-        return Color.LightOrange;
+        return Color.Red;
     }
 
     // Fall-through...
