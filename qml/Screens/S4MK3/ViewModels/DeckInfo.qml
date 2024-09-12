@@ -14,6 +14,13 @@ Item
     return deckId == 1 || deckId == 3;
   }
 
+  // This function was taken from DeckHeaderText.qml
+  // from the S8 QML files
+  function getStableTempoString(stableTempo) {
+    var tempo = stableTempo.value - 1;
+    return   ((tempo < 0) ? "" : "+") + (tempo * 100).toFixed(1).toString() + "%";
+  }
+
   ////////////////////////////////////
   /////// Track info properties //////
   ////////////////////////////////////
@@ -23,6 +30,7 @@ Item
   readonly property bool    shift:                propShift.value
   readonly property string  artistString:         propArtist.value
   readonly property string  bpmString:            isLoaded ? propBPM.value.toFixed(2).toString() : "0.00"
+  readonly property string  stableTempoString:    isLoaded ? getStableTempoString(propStableTempo) : "0.00%"
   readonly property real    elapsedTime:          propElapsedTime.value 
   readonly property bool    hightlightLoop:       !shift
   readonly property bool    hightlightKey:        shift
@@ -56,6 +64,7 @@ Item
   AppProperty { id: propKeyAdjust;              path: "app.traktor.decks." + deckId + ".track.key.adjust" }
   AppProperty { id: propKeyLockOn;              path: "app.traktor.decks." + deckId + ".track.key.lock_enabled" }
   AppProperty { id: propBPM;                    path: "app.traktor.decks." + deckId + ".tempo.true_bpm" }
+  AppProperty { id: propStableTempo;            path: "app.traktor.decks." + deckId + ".tempo.true_tempo" }
   AppProperty { id: propPhase;                  path: "app.traktor.decks." + deckId + ".tempo.phase"; }
   AppProperty { id: propLoopSizeIdx;            path: "app.traktor.decks." + deckId + ".loop.size" }
   AppProperty { id: propLoopActive;             path: "app.traktor.decks." + deckId + ".loop.active"; }

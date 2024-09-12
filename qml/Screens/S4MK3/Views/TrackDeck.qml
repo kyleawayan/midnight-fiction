@@ -69,7 +69,7 @@ Item {
         radius: display.boxesRadius
 
         Text {
-          text: deckInfo.bpmString
+          text: deckInfo.bpmString + " " + deckInfo.stableTempoString
           font.pixelSize: 24
           font.family: "Roboto"
           font.weight: Font.Normal
