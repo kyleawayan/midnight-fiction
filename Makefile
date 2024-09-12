@@ -9,9 +9,11 @@ import:
 	rm -r $(PROJECT_DIR)/qml
 
 	mkdir -p $(PROJECT_DIR)/qml/CSI/S4MK3
+	mkdir -p $(PROJECT_DIR)/qml/CSI/Common
 	mkdir -p $(PROJECT_DIR)/qml/Screens/S4MK3
 
 	cp -r $(BASE_PATH)/CSI/S4MK3/ $(PROJECT_DIR)/qml/CSI/S4MK3/
+	cp -r $(BASE_PATH)/CSI/Common/DeckHelpers.js $(PROJECT_DIR)/qml/CSI/Common/DeckHelpers.js # for deck colors
 	cp -r $(BASE_PATH)/Screens/S4MK3/ $(PROJECT_DIR)/qml/Screens/S4MK3/
 
 install:
@@ -27,4 +29,5 @@ install:
 	fi
 
 	cp -r $(PROJECT_DIR)/qml/CSI/S4MK3/ $(BASE_PATH)/CSI/S4MK3/
+	cp -r $(PROJECT_DIR)/qml/CSI/Common/DeckHelpers.js $(BASE_PATH)/CSI/Common/DeckHelpers.js
 	cp -r $(PROJECT_DIR)/qml/Screens/S4MK3/ $(BASE_PATH)/Screens/S4MK3/
