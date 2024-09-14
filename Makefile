@@ -35,3 +35,8 @@ install:
 	cp -r $(PROJECT_DIR)/qml/Screens/S4MK3/ $(BASE_PATH)/Screens/S4MK3/
 
 	cp -r $(PROJECT_DIR)/qml/Screens/S8_MIDNIGHT_FICTION/ $(BASE_PATH)/Screens/S8_MIDNIGHT_FICTION/
+
+install-and-run:
+	osascript -e 'quit app "Traktor Pro 4"'
+	$(MAKE) install
+	open $(BASE_PATH)/../../../../Traktor\ Pro\ 4.app
