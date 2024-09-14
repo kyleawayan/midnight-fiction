@@ -16,7 +16,7 @@ import:
 	cp -r $(BASE_PATH)/CSI/Common/DeckHelpers.js $(PROJECT_DIR)/qml/CSI/Common/DeckHelpers.js # for deck colors
 	cp -r $(BASE_PATH)/Screens/S4MK3/ $(PROJECT_DIR)/qml/Screens/S4MK3/
 
-	cp -r $(BASE_PATH)/Screens/S8/ $(PROJECT_DIR)/qml/Screens/S8_MIDNIGHT_FICTION_COPY/
+	cp -r $(BASE_PATH)/Screens/S8/ $(PROJECT_DIR)/qml/Screens/S8_MIDNIGHT_FICTION/
 
 install:
 	mkdir -p $(PROJECT_DIR)/qml_folder_backup
@@ -34,4 +34,4 @@ install:
 	cp -r $(PROJECT_DIR)/qml/CSI/Common/DeckHelpers.js $(BASE_PATH)/CSI/Common/DeckHelpers.js
 	cp -r $(PROJECT_DIR)/qml/Screens/S4MK3/ $(BASE_PATH)/Screens/S4MK3/
 
-	cp -r $(PROJECT_DIR)/qml/Screens/S8_MIDNIGHT_FICTION_COPY/ $(BASE_PATH)/Screens/S8_MIDNIGHT_FICTION_COPY/
+	cp -r $(PROJECT_DIR)/qml/Screens/S8_MIDNIGHT_FICTION/ $(BASE_PATH)/Screens/S8_MIDNIGHT_FICTION/
