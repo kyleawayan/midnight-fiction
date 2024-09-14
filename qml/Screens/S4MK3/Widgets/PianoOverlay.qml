@@ -36,10 +36,16 @@ Item {
   property int keyIdx: deckInfo.resultingKeyIdx
 
   function getClosestHarmonicKeyName() {
+    if (!deckInfo.hasKey) {
+      return "No key";
+    }
     return HarmonicKeys.calculateHarmonicKeys(keyIdx).closestHarmonic.keyName;
   }
 
   function getFormattedHarmonicKeys() {
+    if (!deckInfo.hasKey) {
+      return "No key";
+    }
     return HarmonicKeys.calculateHarmonicKeys(keyIdx).harmonicKeys.slice(1).join(", ");
   }
 
