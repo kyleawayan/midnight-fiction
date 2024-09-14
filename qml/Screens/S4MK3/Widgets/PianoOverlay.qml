@@ -1,6 +1,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import '../Views'
+import '../utils/harmonicKeys.js' as HarmonicKeys
 
 //----------------------------------------------------------------------------------------------------------------------
 //  Piano Overlay - for reference when matching keys of tracks
@@ -32,6 +33,16 @@ Item {
   property variant lightGray: colors.colorDeckGrey
   property variant darkGray:  colors.colorDeckDarkGrey
 
+  property int keyIdx: deckInfo.resultingKeyIdx
+
+  function getClosestHarmonicKeyName() {
+    return HarmonicKeys.calculateHarmonicKeys(keyIdx).closestHarmonic.keyName;
+  }
+
+  function getFormattedHarmonicKeys() {
+    return HarmonicKeys.calculateHarmonicKeys(keyIdx).harmonicKeys.slice(1).join(", ");
+  }
+
   Rectangle
   {
     width:  display.width
@@ -49,7 +60,7 @@ Item {
 
     DeckHeader
     {
-      title:  "?bm  -  ?bm   |   ?bm  -  ?bm"
+      title:  "Closest harmonic:  " + getClosestHarmonicKeyName()
       height: display.firstRowHeight
       width:  2*display.infoBoxesWidth + display.cellSpacing
     }
@@ -63,17 +74,15 @@ Item {
         height: display.firstRowHeight
         width:  display.infoBoxesWidth
 
-        color: "grey"
-        radius: display.boxesRadius
+        color: colors.defaultBackground
 
         Text {
-          text: "?bm +?"
+          text: "Other:  " + getFormattedHarmonicKeys()
           font.pixelSize: 24
           font.family: "Roboto"
           font.weight: Font.Normal
           color: "white"
           anchors.fill: parent
-          horizontalAlignment: Text.AlignHCenter
           verticalAlignment: Text.AlignVCenter
         }
       }
