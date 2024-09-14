@@ -102,14 +102,13 @@ Item {
     {
       spacing: display.cellSpacing
       
-      Text {
-        text: "Put Piano Here." + (display.infoBoxesWidth*2 + display.cellSpacing) + "x" + display.secondRowHeight
-        font.pixelSize: 24
-        font.family: "Roboto"
-        font.weight: Font.Normal
-        anchors.fill: parent
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
+      Image {
+        id: piano_overlay_image
+        width: 306
+        height: 72
+        clip: true
+        fillMode: Image.Stretch
+        source: "../Images/piano_overlay.png"
       }
     }
   }
