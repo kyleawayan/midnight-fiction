@@ -2,6 +2,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 
 import '../Widgets' as Widgets
+import '../../S8_MIDNIGHT_FICTION_COPY/Views/Waveform' as WF
 
 //----------------------------------------------------------------------------------------------------------------------
 //  Track Screen View - UI of the screen for track
@@ -197,32 +198,26 @@ Item {
           anchors.fill: parent
           horizontalAlignment: Text.AlignHCenter
           verticalAlignment: Text.AlignVCenter
-        }
+        } 
       }
 
       
 
     } // second row
 
-    // STRIPE //
-    Widgets.Stripe
-    {
-      deckId:  deckInfo.deckId - 1 // stripe uses zero based indices.
-      visible: deckInfo.isLoaded
+    // SCROLLING WAVEFORM //
+    WF.WaveformContainer {
+      id: waveformContainer
 
-      // we apply -3 on the height and +3 on the topMargin,
-      //because Widgets.Stripes has elements (the cues) that are
-      //not taken into the height of the Stripe. They are 3pix outside
-      //of the stripe.
-      height: display.secondRowHeight
-      width:  2*display.infoBoxesWidth + display.spacing - 6
-      Layout.leftMargin: 6
+      deckId:         deckInfo.deckId - 1 
+      deckSizeState:  "small"
+      sampleWidth:    0x800 << 6 // Change the integer here for waveform zoom
+      propertiesPath: ""
 
+      anchors.left:         parent.left
+      anchors.right:        parent.right
 
-      hotcuesModel: deckInfo.hotcues
-      trackLength:  deckInfo.trackLength
-      elapsedTime:  deckInfo.elapsedTime
-      audioStreamKey: ["PrimaryKey", deckInfo.primaryKey]
+      height:   70
     }
 
   }
