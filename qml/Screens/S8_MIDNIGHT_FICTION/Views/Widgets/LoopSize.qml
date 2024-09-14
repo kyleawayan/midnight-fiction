@@ -11,23 +11,24 @@ Item {
 
   Rectangle {
     id:       loopSizeBackground
-    width:    59
+    width:    100
     height:   width
     radius:   width * 0.5
     color:    colors.colorBlack85
     Behavior on opacity { NumberAnimation { duration: blinkFreq; easing.type: Easing.Linear} }
     anchors.horizontalCenter: parent.horizontalCenter
-    anchors.verticalCenter:   parent.verticalCenter
+    anchors.bottom: parent.bottom
+    anchors.bottomMargin: 10
     Rectangle {
       id:       loopLengthBorder
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.verticalCenter:   parent.verticalCenter
-      width:  loopSizeBackground.width -2
+      width:  loopSizeBackground.width -4
       height: width
       radius: width * 0.5
       color: "transparent"
       border.color: colors.colorGreen
-      border.width: 2
+      border.width: 3
     }
   }
 
@@ -35,8 +36,8 @@ Item {
       readonly property variant loopText: ["/32", "/16", "1/8", "1/4", "1/2", "1", "2", "4", "8", "16", "32"]
       text: loopText[loopSizePos.value]
       color: colors.colorGreen
-      font.pixelSize: fonts.extraLargeValueFontSize
-      font.family: "Pragmatica"
+      font.pixelSize: fonts.extraLargeValueFontSize * 1.5
+      font.family: "Roboto"
       anchors.fill: loopSizeBackground
       anchors.rightMargin: 2
       anchors.topMargin: 1
@@ -44,11 +45,11 @@ Item {
       verticalAlignment:   Text.AlignVCenter
       onTextChanged: {
         if (loopSizePos.value < 5) {
-          font.pixelSize = 22
+          font.pixelSize = 33
         } else if ( loopSizePos.value > 8 ){
-          font.pixelSize = 32
+          font.pixelSize = 48
         } else {
-          font.pixelSize = fonts.extraLargeValueFontSize
+          font.pixelSize = fonts.extraLargeValueFontSize * 1.5
         }
       }
     }
