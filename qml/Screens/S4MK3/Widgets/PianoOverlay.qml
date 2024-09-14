@@ -43,58 +43,39 @@ Item {
   {
     spacing: display.cellSpacing
     anchors.top: parent.top
-    anchors.topMargin: display.screenTopMargin + display.firstRowHeight + display.cellSpacing
+    anchors.topMargin: display.screenTopMargin
     anchors.left: parent.left
     anchors.leftMargin: display.screenLeftMargin
+
+    DeckHeader
+    {
+      title:  "?bm  -  ?bm   |   ?bm  -  ?bm"
+      height: display.firstRowHeight
+      width:  2*display.infoBoxesWidth + display.cellSpacing
+    }
 
     RowLayout
     {
       spacing: display.cellSpacing
 
-      // VOLUME LABEL //
       Rectangle {
 
         height: display.firstRowHeight
         width:  display.infoBoxesWidth
 
-        color: display.deckInfo.isStemsActive ? (!display.deckInfo.stemSelectedMuted ? display.deckInfo.stemSelectedMidColor : colors.darkerColor(display.deckInfo.stemSelectedMidColor, 0.5) ) : "grey"
+        color: "grey"
         radius: display.boxesRadius
 
         Text {
-          text: "-5: ?b | -3: ?b"
+          text: "?bm +?"
           font.pixelSize: 24
           font.family: "Roboto"
           font.weight: Font.Normal
-          color: "grey"
+          color: "white"
           anchors.fill: parent
           horizontalAlignment: Text.AlignHCenter
           verticalAlignment: Text.AlignVCenter
         }
-      }
-
-      // FILTER LABEL //
-      Rectangle {
-        
-        height: display.firstRowHeight
-        width:  display.infoBoxesWidth
-
-        color:  display.deckInfo.isStemsActive ? (display.deckInfo.stemSelectedFilterOn ? display.deckInfo.stemSelectedMidColor : colors.darkerColor(display.deckInfo.stemSelectedMidColor, 0.5) ) : "grey"
-        radius: display.boxesRadius
-
-        Text {
-          text: "+3: ?b | +5: ?b"
-          font.pixelSize: 24
-          font.family: "Roboto"
-          font.weight: Font.Normal
-          color: "grey"
-          anchors.verticalCenter: parent.verticalCenter
-          anchors.rightMargin: display.textMargin
-          anchors.leftMargin:  display.textMargin
-          anchors.fill: parent
-          horizontalAlignment: Text.AlignHCenter
-          verticalAlignment: Text.AlignVCenter
-        }
-        
       }
     }
 
