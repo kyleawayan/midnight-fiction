@@ -39,4 +39,6 @@ install:
 install-and-run:
 	osascript -e 'quit app "Traktor Pro 4"'
 	$(MAKE) install
+	# Wait 1 second
+	sleep 1
 	open $(BASE_PATH)/../../../../Traktor\ Pro\ 4.app
