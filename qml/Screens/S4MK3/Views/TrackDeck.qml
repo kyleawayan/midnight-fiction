@@ -2,7 +2,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 
 import '../Widgets' as Widgets
-import '../../S8_MIDNIGHT_FICTION_COPY/Views/Waveform' as WF
+import '../../S8_MIDNIGHT_FICTION/Views/Waveform' as WF
 
 //----------------------------------------------------------------------------------------------------------------------
 //  Track Screen View - UI of the screen for track
