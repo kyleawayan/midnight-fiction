@@ -210,9 +210,7 @@ Item {
       id: waveformContainer
 
       deckId:         deckInfo.deckId - 1 
-      deckSizeState:  "small"
       sampleWidth:    0x800 << 6 // Change the integer here for waveform zoom
-      propertiesPath: ""
 
       anchors.left:         parent.left
       anchors.right:        parent.right
