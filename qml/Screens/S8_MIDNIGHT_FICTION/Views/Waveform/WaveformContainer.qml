@@ -4,6 +4,11 @@ import Qt5Compat.GraphicalEffects
 import Traktor.Gui 1.0 as T
 
 import '../../../../Defines'
+// Note this Defines is a different one than above,
+// this one is under the "Screens" folder
+// Note this is not imported into the midnight-fiction repo
+// This is just taking the existing one from the Traktor app folder
+import '../../../Defines' as Defines
 import '../Widgets' as Widgets
 
 
@@ -15,6 +20,8 @@ Item {
   property bool   showLoopSize: false
   property bool   isInEditMode: false
   property string propertiesPath: ""
+
+  Defines.Colors {id: colors}
 
   readonly property bool trackIsLoaded: (primaryKey.value > 0)
 
