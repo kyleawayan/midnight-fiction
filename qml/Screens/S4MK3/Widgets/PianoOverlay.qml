@@ -83,7 +83,7 @@ Item {
         color: colors.defaultBackground
 
         Text {
-          text: "Other:  " + getFormattedHarmonicKeys()
+          text: "Alts:  " + getFormattedHarmonicKeys()
           font.pixelSize: 24
           font.family: "Roboto"
           font.weight: Font.Normal
