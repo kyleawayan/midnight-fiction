@@ -46,7 +46,7 @@ Item {
     if (!deckInfo.hasKey) {
       return "No key";
     }
-    return HarmonicKeys.calculateHarmonicKeys(keyIdx).harmonicKeys.slice(1).join(", ");
+    return HarmonicKeys.calculateHarmonicKeys(keyIdx).harmonicKeys.join(", ");
   }
 
   Rectangle
@@ -66,7 +66,7 @@ Item {
 
     DeckHeader
     {
-      title:  "Closest harmonic:  " + getClosestHarmonicKeyName()
+      title:  "Possible keys to match:"
       height: display.firstRowHeight
       width:  2*display.infoBoxesWidth + display.cellSpacing
     }
@@ -83,7 +83,7 @@ Item {
         color: colors.defaultBackground
 
         Text {
-          text: "Alts:  " + getFormattedHarmonicKeys()
+          text: getFormattedHarmonicKeys()
           font.pixelSize: 24
           font.family: "Roboto"
           font.weight: Font.Normal
