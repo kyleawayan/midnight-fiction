@@ -22,13 +22,13 @@ My Traktor Kontrol S4 MK3 mods, codenamed "Midnight Fiction".
 
 ## Video Demos
 ### Scrolling Waveform
-TODO
+https://github.com/user-attachments/assets/f9c6db68-7f54-48cc-8287-b428d96e45e8
 
 ### Key Match Assist
-TODO
+https://github.com/user-attachments/assets/0fef2786-1cd8-45bf-9642-c23a1583c3ab
 
 ### Display Stable Tempo Percentage
-TODO
+https://github.com/user-attachments/assets/febf7fc9-af6d-4ac5-b227-84d8adcbed3a
 
 ## Installation
 Only tested with Traktor Pro 4 on macOS.
