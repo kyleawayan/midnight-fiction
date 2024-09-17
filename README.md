@@ -3,7 +3,7 @@ My Traktor Kontrol S4 MK3 mods.
 
 ## Features
 - Scrolling waveform
-- "Key Match Assist" to help with harmonic mixing. When holding SHIFT to change the key, keys compatible with the current deck's key are shown (only in musical format).
+- "Key Match Assist" to help with harmonic mixing. When holding SHIFT to change the key, keys compatible with the current deck's key are shown (only in musical format). It also shows a picture of a single octave piano keyboard for reference.
 - Toggle stem FX sends from pads
 - Display stable tempo percentage
 - Change deck 3 and 4 colors to red and orange, respectively
