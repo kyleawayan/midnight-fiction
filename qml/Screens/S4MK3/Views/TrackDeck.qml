@@ -220,7 +220,13 @@ Item {
 
   }
 
-
+  // PIANO OVERLAY //
+  Widgets.PianoOverlay
+  {
+    visible: deckInfo.shift
+    anchors.top: parent.top
+    anchors.left: parent.left
+  }
 
 
 }
